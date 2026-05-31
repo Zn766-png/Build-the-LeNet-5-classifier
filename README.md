@@ -37,7 +37,8 @@ Use torchvision.datasets.FashionMNIST (10 classes, 28x28 grayscale images). Prep
 - Layer 2:  Conv2d(in=6, out=16, kernel_size=5, stride=1, padding=0) → ReLU → MaxPool2d(kernel_size=2, stride=2)
 - Layer 3 (Flatten):  将(N,16,5,5)展平为(N,16×5×5)即(N,400)。
 - Layer 4 (FC):  Linear(400 → 120) → ReLU → Linear(120 → 84) → ReLU → Linear(84 → 10)。
-2. 维度自检：编写一个 check_shape() 函数，输入随机张量 x = torch.randn(1,1,28,28)，打印并断言每一层输出 shape。
+2. 维度自检：
+  编写一个 check_shape() 函数，输入随机张量 x = torch.randn(1,1,28,28)，打印并断言每一层输出 shape。
 3. 编写训练Pipeline：
 - 检测设备：device = "cuda" if torch.cuda.is_available() else "cpu"。
 - 模型与数据迁移：model.to(device), inputs, labels = inputs.to(device), labels.to(device)。
